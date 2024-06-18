@@ -20,11 +20,10 @@ button.primary {
   background-color: var(--color-light);
   color: var(--color-dark);
   border: none;
-  height: 8em;
-  width: 8em;
+  height: 8rem;
+  aspect-ratio: 1/1;
   line-height: 1.3em;
   padding-block: 1.6em 1em;
-  aspect-ratio: 1/1;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color var(--transition-movement);
@@ -34,9 +33,9 @@ button.shuffle {
   font-family: var(--font-h);
   font-weight: 700;
   font-size: clamp(1.875rem, 3vw, 2.375rem);
-  line-height: 6.4em;
-  height: 6em;
-  width: 6em;
+  text-align: center;
+  line-height: 7em;
+  height: 12rem;
   aspect-ratio: 1/1;
   border: none;
   background-color: var(--color-light);
