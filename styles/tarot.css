@@ -21,6 +21,7 @@ button.primary {
   color: var(--color-dark);
   border: none;
   height: 8em;
+  width: 8em;
   line-height: 1.3em;
   padding-block: 1.6em 1em;
   aspect-ratio: 1/1;
@@ -35,6 +36,7 @@ button.shuffle {
   font-size: clamp(1.875rem, 3vw, 2.375rem);
   line-height: 6.4em;
   height: 6em;
+  width: 6em;
   aspect-ratio: 1/1;
   border: none;
   background-color: var(--color-light);
