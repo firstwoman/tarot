@@ -1,0 +1,334 @@
+.slider {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+section.steps {
+  /* border: 1px solid fuchsia; */
+  height: 100%;
+  /* scroll-snap-align: start; */
+  box-sizing: border-box;
+}
+
+button.primary {
+  font-family: var(--font-h);
+  font-weight: 500;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  letter-spacing: .05em;
+  background-color: var(--color-light);
+  border: none;
+  height: 8em;
+  line-height: 1.3em;
+  padding-block: 1.6em 1em;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition-movement);
+}
+
+button.shuffle {
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: clamp(1.875rem, 3vw, 2.375rem);
+  line-height: 6.4em;
+  height: 6em;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: var(--color-light);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition-movement);
+}
+
+button.primary:hover,
+button.shuffle:hover {
+  background-color: #E9FF70;
+}
+
+.slant {
+  display: inline-block;
+  transform: skewY(-10deg);
+  text-transform: uppercase;
+  transition: transform var(--transition-base);
+}
+
+button.primary:hover .slant,
+button.shuffle:hover .slant {
+  transform: skewY(0deg);
+}
+
+/* button.shuffle:active {
+  background-color: #D0F500;
+} */
+
+.button__footer {
+  grid-column: 1 / 4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+.card__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 12vh;
+  height: 100%;
+}
+
+.card__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+@media screen and (min-width: 48rem){
+  .card__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
+
+.card__item-container {
+  height: 100%;
+}
+
+.card__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  }
+
+
+.card__item-title {
+  /* responsive font size: calc([min font size, in rem] + [dif between max and min font sizes] * (100vw - [min viewport w starts scaling, in rem]) / [dif between max and min viewports, e.g. 80-48rem= 32]) */
+  font-size: calc(2.2rem + .8 * (100vw - 58rem) / 22);
+  text-align: center;
+  transform: skewY(-10deg);
+}
+
+.card__item-title-span {
+  font-size: .5em;
+  text-decoration: underline;
+  text-decoration-thickness: .15em;
+  vertical-align: 40%;
+}
+
+.card__item-main {
+  padding: 1.5rem;
+}
+
+div.card__item-main-rx {
+  justify-content: start;
+  padding: 4rem 1.5rem .5rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card__item-tagline {
+  font-family: var(--font-h);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: calc(1rem + .25 * (100vw - 58rem) / 22);
+  text-align: center;
+}
+
+div.title-wrapper {
+  /* border: 1px solid black; */
+  height: calc((2.2rem + .8 * (100vw - 58rem) / 22) * 3); /* Same .card__item-title size by factor, e.g. 3 */
+}
+
+.card__item-bottom {
+  height: 4rem;
+  width: 100%;
+}
+
+.gradient_bg1 {
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: linear-gradient(164deg, var(--color-mid) 40%, #E9FF70 62%);
+}
+
+
+.pattern_bg1 {
+  --s: 3rem; /* control the size*/
+  --c1: #E9FF70;
+  --c2: #FFD670;
+  --c3: #FF9770;
+  --c4: #FF70A6;
+  --c5: #c5bc8e;
+  
+  --_g:conic-gradient(at 25%,#0000 75%,var(--c1) 0);
+  --_s:/calc(2*var(--s)) calc(2*var(--s));
+  background:
+    radial-gradient(#0000 64%,var(--c5) 65%) 
+      0 0/var(--s) var(--s),
+    var(--_g) 0 0 var(--_s),
+    var(--_g) var(--s) var(--s) var(--_s),
+    repeating-conic-gradient(#0000 0 25%,var(--c2) 0 50%)
+      0 0 var(--_s),
+    linear-gradient(var(--c3) 50%,var(--c4) 0) 
+      0 0/1% var(--s);
+}
+
+.pattern_bg2 {
+    /* --s: .5rem;
+    --c1: #444444;
+    --c2: #0000;
+    
+    --g:#0000 45%,var(--c1) 46% 54%,#0000 55%;
+    background:
+      linear-gradient( 60deg,var(--g)),
+      linear-gradient(-60deg,var(--g)) var(--c2);
+    background-size: var(--s) calc(tan(60deg)*var(--s)); */
+
+    /* background:
+radial-gradient(circle at 0% 50%, #0000 9px, #613 10px, #0000 11px) 0px 10px,
+radial-gradient(at 100% 100%,     #0000 9px, #613 10px, #0000 11px),
+#0000;
+background-size: 20px 20px; */
+
+background-image: repeating-linear-gradient(45deg, #613 0, #613 1px, transparent 0, transparent 50%),
+                  repeating-linear-gradient(-45deg, #613 0, #613 1px, transparent 0, transparent 50%);
+background-size: 1rem 1rem;
+background-color: #0000;
+}
+
+.style__cups-bg {
+  background-color: #FF9770;
+}
+
+.style__swords-bg {
+  background-color: #E9FF70;
+}
+
+.style__wands-bg {
+  background-color: #FF70A6;
+}
+
+.style__pentacles-bg {
+  background-color: #FFD670;
+}
+
+.style__major-bg {
+  background-color: var(--color-mid);
+}
+
+.style__mid-bg {
+  background-color: var(--color-mid2);
+}
+
+.style__cups-pattern {
+background:
+      radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,var(--color-cups-dk) 68% 70%,#0000 72%) 32px 32px/calc(2*32px) calc(2*32px),
+      radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,var(--color-cups-dk) 68% 70%,#0000 72%) 32px 32px/calc(2*32px) calc(2*32px),
+      radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,var(--color-cups-dk) 68% 70%,#0000 72%) 0 0/calc(2*32px) calc(2*32px),
+      radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,var(--color-cups-dk) 68% 70%,#0000 72%) 0 0/calc(2*32px) calc(2*32px),
+      repeating-conic-gradient(rgba(0, 0, 0, 0) 0 25%,#0000 0 50%) 0 0/calc(2*32px) calc(2*32px),
+      radial-gradient(#0000 66%,var(--color-cups-dk) 68% 70%,#0000 72%) 0 calc(32px/2)/32px 32px
+      rgba(0, 0, 0, 0);
+
+}
+
+.style__swords-pattern {
+  background:
+  radial-gradient(27% 29% at right, #0000 83%,var(--color-swords-dk) 85% 99%,#0000 101%) calc(1rem/2) 1rem,
+  radial-gradient(27% 29% at left, #0000 83%,var(--color-swords-dk) 85% 99%,#0000 101%) calc(1rem/-2) 1rem,
+  radial-gradient(29% 27% at top, #0000 83%,var(--color-swords-dk) 85% 99%,#0000 101%) 0 calc(1rem/2),
+  radial-gradient(29% 27% at bottom, #0000 83%,var(--color-swords-dk) 85% 99%,#0000 101%) 0 calc(1rem/-2)
+  rgba(0, 0, 0, 0);
+background-size: 2rem 2rem;
+}
+
+.style__wands-pattern {
+  background-image: repeating-linear-gradient(45deg, var(--color-wands-dk) 0, var(--color-wands-dk) 1px, transparent 0, transparent 50%),
+                  repeating-linear-gradient(-45deg, var(--color-wands-dk) 0, var(--color-wands-dk) 1px, transparent 0, transparent 50%);
+background-size: 1rem 1rem;
+background-color: #0000;
+}
+
+.style__pentacles-pattern {
+  background: radial-gradient(var(--color-pentacles-dk) 10%, transparent 10%, transparent 39%, var(--color-pentacles-dk) 40%,var(--color-pentacles-dk) 45%, transparent 46%),radial-gradient(circle at top left,var(--color-pentacles-dk) 4%, transparent 5%, transparent 19%, var(--color-pentacles-dk) 20%,var(--color-pentacles-dk) 22%, transparent 23%),radial-gradient(circle at top right,var(--color-pentacles-dk) 4%, transparent 5%, transparent 19%, var(--color-pentacles-dk) 20%,var(--color-pentacles-dk) 22%, transparent 23%),radial-gradient(circle at bottom left,var(--color-pentacles-dk) 4%, transparent 5%, transparent 19%, var(--color-pentacles-dk) 20%,var(--color-pentacles-dk) 22%, transparent 23%),radial-gradient(circle at bottom right,var(--color-pentacles-dk) 4%, transparent 5%, transparent 19%, var(--color-pentacles-dk) 20%,var(--color-pentacles-dk) 22%, transparent 23%);
+  background-size: 2em 2em;
+  background-color: #0000;
+  opacity: 1
+}
+
+.style__major-pattern {
+  background: linear-gradient(45deg,transparent 15%, var(--color-major-dk) 15%, var(--color-major-dk) 20%, transparent 20%, transparent 80%, var(--color-major-dk)  80%, var(--color-major-dk) 85%, transparent 85%), linear-gradient(135deg, transparent 15%, var(--color-major-dk) 15%, var(--color-major-dk) 20%, transparent 20%, transparent 80%, var(--color-major-dk)  80%, var(--color-major-dk) 85%, transparent 85%),  radial-gradient(circle at top,transparent 9%, var(--color-major-dk) 10% ,var(--color-major-dk) 15% , transparent 16%), radial-gradient(circle at bottom,transparent 9%, var(--color-major-dk) 10% ,var(--color-major-dk) 15% , transparent 16%), radial-gradient(circle at right,transparent 9%, var(--color-major-dk) 10% ,var(--color-major-dk) 15% , transparent 16%), radial-gradient(circle at left,transparent 9%, var(--color-major-dk) 10% ,var(--color-major-dk) 15% , transparent 16%);
+        background-size: 1.5em 1.5em;
+        background-color: #0000;
+        opacity: 1
+}
+
+
+/* Hero animation */
+
+.phrase-container {
+  position: relative;
+}
+
+.phrase {
+  opacity: 0;
+  /* position: absolute; */
+  font-family: var(--font-h);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: clamp(1.875rem, 4vw, 2.375rem);
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+.phrase:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.phrase:nth-child(2) {
+  animation-delay: 500ms;
+}
+
+.phrase:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.phrase:nth-child(4) {
+  animation-delay: 1500ms;
+}
+
+.site-name {
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+  
+

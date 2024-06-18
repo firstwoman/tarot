@@ -1,0 +1,6 @@
+/* @font-face here */
+@font-face {
+  font-family: "Grumpy";
+  src: url('/assets/fonts/grumpy24.woff') format('woff'),
+      url('/assets/fonts/grumpy24.ttf')format('truetype');
+}

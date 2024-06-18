@@ -1,0 +1,46 @@
+:root {
+  --color-light: #ffffff;
+  --color-mid: #EAE5D4;
+  --color-mid2: #c5bc8e;
+  --color-dark: #030303;
+  --color-primary: blue;
+
+  --color-cups: #FF9770;
+  --color-cups-dk: #F54100;
+  --color-swords: #E9FF70;
+  --color-swords-dk: #D0F500;
+  --color-wands: #FF70A6;
+  --color-wands-dk: #F5005E;
+  --color-pentacles: #FFD670;
+  --color-pentacles-dk: #F5AF00;
+  --color-major: #EAE5D4;
+  --color-major-dk: #C9BB92;
+
+
+  --h1: clamp(2.5rem, 6vw, 3.125rem);
+  --h2: clamp(1.875rem, 4vw, 2.375rem);
+  --h3: clamp(1.3rem, 3vw, 1.5rem);
+  --h4: clamp(1.25rem, 2.5vw, 1.5rem);
+  --h5: clamp(0.875rem, 2vw, 1rem);
+  --h6: clamp(0.75rem, 1.5vw, 0.875rem);
+  --p: clamp(0.875rem, 2vw, 1rem);
+
+  --font-h: 'dazzle-unicase', sans-serif;
+
+
+  --sp_small: 1rem;
+  --sp_medium: 1.875rem;
+  --sp_large: 1.875rem;
+  --sp_xlarge: 6.875rem;
+
+
+
+  --gutter: var(--space-s-l);
+  --transition-base: 250ms ease;
+  --transition-movement: 200ms linear;
+  --transition-fade: 300ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
+  --leading-standard: 1.5;
+}
+
+
