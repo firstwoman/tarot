@@ -18,6 +18,7 @@ button.primary {
   font-size: clamp(0.875rem, 2vw, 1rem);
   letter-spacing: .05em;
   background-color: var(--color-light);
+  color: var(--color-dark);
   border: none;
   height: 8em;
   line-height: 1.3em;
@@ -37,6 +38,7 @@ button.shuffle {
   aspect-ratio: 1/1;
   border: none;
   background-color: var(--color-light);
+  color: var(--color-dark);
   border-radius: 50%;
   cursor: pointer;
   transition: background-color var(--transition-movement);
