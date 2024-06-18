@@ -20,7 +20,7 @@ button.primary {
   background-color: var(--color-light);
   color: var(--color-dark);
   border: none;
-  height: calc(clamp(0.875rem, 2vw, 1rem) * 8);
+  height: calc(clamp(0.875rem, 2vw, 1rem) * 12);
   aspect-ratio: 1/1;
   line-height: 1.3em;
   padding-block: 1.6em 1em;
