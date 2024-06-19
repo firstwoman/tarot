@@ -79,7 +79,6 @@ body {
 .wrapper-lg {
   margin-inline: auto;
   padding-inline: 1rem;
-  border:1px solid gray;
 }
 
 @media only screen and (min-width: 64rem) {
