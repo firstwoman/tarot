@@ -5,12 +5,13 @@
 button.primary {
   font-family: var(--font-h);
   font-weight: 500;
-  font-size: clamp(0.875rem, 2vw, 1rem);
+  /* font-size: clamp(0.875rem, 2vw, 1rem); */
+  font-size: 1rem;
   letter-spacing: .05em;
   background-color: var(--color-light);
   color: var(--color-dark);
   border: none;
-  height: calc(clamp(0.875rem, 2vw, 1rem) * 8);
+  height: 8rem;
   aspect-ratio: 1/1;
   line-height: 1.3em;
   padding-block: 1.6em 1em;
@@ -22,10 +23,11 @@ button.primary {
 button.shuffle {
   font-family: var(--font-h);
   font-weight: 700;
-  font-size: clamp(1.875rem, 3vw, 2.375rem);
+  /* font-size: clamp(1.875rem, 3vw, 2.375rem); */
+  font-size: 2.375rem;
   text-align: center;
   line-height:6.4em;
-  height: calc(clamp(1.875rem, 3vw, 2.375rem) * 6);
+  height: 14.25rem;
   aspect-ratio: 1/1;
   border: none;
   background-color: var(--color-light);
@@ -139,6 +141,7 @@ button.shuffle:hover .slant {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 12vh;
   height: 100%;
+  border: 1px solid violet;
 }
 
 .card__list {
@@ -204,6 +207,7 @@ div.card__item-main-rx {
 }
 
 div.title-wrapper {
+  /* border: 1px solid black; */
   height: calc((2.2rem + .8 * (100vw - 58rem) / 22) * 3); /* Same .card__item-title size by factor, e.g. 3 */
 }
 
