@@ -14,7 +14,7 @@ button.primary {
   width: 8rem;
   aspect-ratio: 1/1;
   line-height: 1.3em;
-  padding-block: 1.6em 1em;
+  padding-block: 1.5em 1em;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color var(--transition-movement);
@@ -25,7 +25,6 @@ button.shuffle {
   font-weight: 700;
   /* font-size: clamp(1.875rem, 3vw, 2.375rem); */
   font-size: 2.375rem;
-  text-align: center;
   line-height:6.4em;
   width: 14.25rem;
   aspect-ratio: 1/1;
