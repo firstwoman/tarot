@@ -141,7 +141,6 @@ button.shuffle:hover .slant {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 12vh;
   height: 100%;
-  border: 1px solid violet;
 }
 
 .card__list {
