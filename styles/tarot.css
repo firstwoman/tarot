@@ -25,9 +25,9 @@ button.shuffle {
   font-weight: 700;
   /* font-size: clamp(1.875rem, 3vw, 2.375rem); */
   font-size: 2.375rem;
-  line-height:6.4em;
-  width: 16rem;
+  line-height: 7.2em;
   aspect-ratio: 1/1;
+  width: 16rem;
   border: none;
   background-color: var(--color-light);
   color: var(--color-dark);
@@ -39,6 +39,11 @@ button.shuffle {
 button.primary:hover,
 button.shuffle:hover {
   background-color: #E9FF70;
+}
+
+button.primary:disabled,
+button.shuffle:disabled {
+  color: #aaaaaa;
 }
 
 .slant {
@@ -69,13 +74,14 @@ button.shuffle:hover .slant {
 
 
 /* –––––––––––––––––––––––
-      SECTION – Hero
+      SECTION – Intro
   –––––––––––––––––––––––– */
 
-/* Hero animation */
+/* Intro animation */
 
 .phrase-container {
   position: relative;
+  z-index: -1;
 }
 
 .phrase {
@@ -87,6 +93,7 @@ button.shuffle:hover .slant {
   text-align: center;
   font-size: clamp(1.875rem, 4vw, 2.375rem);
   animation: fadeIn 3s ease-in-out forwards;
+
 }
 
 .phrase:nth-child(1) {
@@ -108,12 +115,16 @@ button.shuffle:hover .slant {
 .site-name {
   opacity: 0;
   animation: fadeIn 3s ease-in-out 2s forwards;
+  z-index: -1;
 }
 
 @keyframes fadeInOut {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
@@ -123,6 +134,7 @@ button.shuffle:hover .slant {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -138,26 +150,35 @@ button.shuffle:hover .slant {
 .card__grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 12vh;
-  height: 100%;
+  grid-template-rows: 1fr 6rem;
 }
 
 .card__list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
   width: 100%;
 }
 
-@media screen and (min-width: 48rem){
+@media screen and (min-width: 64rem) {
   .card__list {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
   }
 }
 
 .card__item-container {
-  height: 100%;
+  min-height: 18rem;
+}
+
+@media only screen and (min-width: 64rem) {
+  .card__item-container {
+    min-height: 40rem;
+  }
+}
+
+@media only screen and (min-width: 92rem) {
+  .card__item-container {
+    min-height: 58rem;
+  }
 }
 
 .card__item {
@@ -166,12 +187,13 @@ button.shuffle:hover .slant {
   align-items: center;
   height: 100%;
   overflow: hidden;
-  }
-
+}
 
 .card__item-title {
-  /* responsive font size: calc([min font size, in rem] + [dif between max and min font sizes] * (100vw - [min viewport w starts scaling, in rem]) / [dif between max and min viewports, e.g. 80-48rem= 32]) */
-  font-size: calc(2.2rem + .8 * (100vw - 58rem) / 22);
+  /* responsive font size: calc([min font size, in rem] + [dif between max and min font sizes] * (100vw - [min viewport w starts scaling, in rem]) / [dif between max and min viewports, e.g. 120-64rem= 56]) */
+  /* font-size: calc(2.8rem + .8 * (100vw - 64rem) / 37.375); */
+  font-size: calc(2.8rem + .8 * (100vw - 78rem) / 56);
+  font-family: var(--font-h);
   text-align: center;
   transform: skewY(-10deg);
 }
@@ -180,7 +202,8 @@ button.shuffle:hover .slant {
   font-size: .5em;
   text-decoration: underline;
   text-decoration-thickness: .15em;
-  vertical-align: 40%;
+  text-underline-offset: .2em;
+  vertical-align: 42%;
 }
 
 .card__item-main {
@@ -190,40 +213,31 @@ button.shuffle:hover .slant {
 
 div.card__item-main-rx {
   justify-content: start;
-  padding: 4rem 1.5rem .5rem;
+  padding: 3rem 1.5rem .5rem;
   align-items: center;
-  gap: 2rem;
+  gap: calc(3.2rem + 1.2 * (100vw - 78rem) / 56);
   cursor: pointer;
+}
+
+.card__item-body {
+  max-width: 60ch;
 }
 
 .card__item-tagline {
   font-family: var(--font-h);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: calc(1rem + .25 * (100vw - 58rem) / 22);
+  font-size: calc(1.2rem + .1 * (100vw - 78rem) / 56);
   text-align: center;
 }
 
 div.title-wrapper {
   /* border: 1px solid black; */
-  height: calc((2.2rem + .8 * (100vw - 58rem) / 22) * 3); /* Same .card__item-title size by factor, e.g. 3 */
+  height: calc((2.8rem + .8 * (100vw - 78rem) / 56) * 3);
+  /* Same .card__item-title size by factor, e.g. 3 */
 }
 
 .card__item-bottom {
   height: 4rem;
   width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
