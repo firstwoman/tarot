@@ -1,6 +1,6 @@
 
 
-let deck = ['The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot', 'Strength', 'The Hermit', 'Wheel of Fortune', 'Justice', 'The Hanged Man', 'Death', 'Temperance','The Devil', 'The Tower', 'The Star', 'The Moon', 'The Sun', 'Judgement', 'The World', 'Ace of Cups', 'Two of Cups', 'Three of Cups', 'Four of Cups', 'Five of Cups', 'Six of Cups', 'Seven of Cups', 'Eight of Cups', 'Nine of Cups', 'Ten of Cups', 'Page of Cups', 'Knight of Cups', 'Queen of Cups', 'King of Cups', 'Ace of Swords', 'Two of Swords', 'Three of Swords', 'Four of Swords', 'Five of Swords', 'Six of Swords', 'Seven of Swords', 'Eight of Swords', 'Nine of Swords', 'Ten of Swords', 'Page of Swords', 'Knight of Swords', 'Queen of Swords', 'King of Swords', 'Ace of Wands', 'Two of Wands', 'Three of Wands', 'Four of Wands', 'Five of Wands', 'Six of Wands', 'Seven of Wands', 'Eight of Wands', 'Nine of Wands', 'Ten of Wands', 'Page of Wands', 'Knight of Wands', 'Queen of Wands', 'King of Wands', 'Ace of Pentacles', 'Two of Pentacles', 'Three of Pentacles', 'Four of Pentacles', 'Five of Pentacles', 'Six of Pentacles', 'Seven of Pentacles', 'Eight of Pentacles', 'Nine of Pentacles', 'Ten of Pentacles', 'Page of Pentacles', 'Knight of Pentacles', 'Queen of Pentacles', 'King of Pentacles'];
+let deck = ['The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot', 'Strength', 'The Hermit', 'Wheel of Fortune', 'Justice', 'The Hanged Man', 'Death', 'Temperance','The Devil', 'The Tower', 'The Star', 'The Moon', 'The Sun', 'Judgement', 'The World', 'Ace of Cups', 'Two of Cups', 'Three of Cups', 'Four of Cups', 'Five of Cups', 'Six of Cups', 'Seven of Cups', 'Eight of Cups', 'Nine of Cups', 'Ten of Cups', 'Page of Cups', 'Knight of Cups', 'Queen of Cups', 'King of Cups', 'Ace of Swords', 'Two of Swords', 'Three of Swords', 'Four of Swords', 'Five of Swords', 'Six of Swords', 'Seven of Swords', 'Eight of Swords', 'Nine of Swords', 'Ten of Swords', 'Page of Swords', 'Knight of Swords', 'Queen of Swords', 'King of Swords', 'Ace of Wands', 'Two of Wands', 'Three of Wands', 'Four of Wands', 'Five of Wands', 'Six of Wands', 'Seven of Wands', 'Eight of Wands', 'Nine of Wands', 'Ten of Wands', 'Page of Wands', 'Knight of Wands', 'Queen of Wands', 'King of Wands', 'Ace of Coins', 'Two of Coins', 'Three of Coins', 'Four of Coins', 'Five of Coins', 'Six of Coins', 'Seven of Coins', 'Eight of Coins', 'Nine of Coins', 'Ten of Coins', 'Page of Coins', 'Knight of Coins', 'Queen of Coins', 'King of Coins'];
 
 let majorArcana = ['The Fool', 'The Magician', 'The High Priestess', 'The Empress', 'The Emperor', 'The Hierophant', 'The Lovers', 'The Chariot', 'Strength', 'The Hermit', 'Wheel of Fortune', 'Justice', 'The Hanged Man', 'Death', 'Temperance','The Devil', 'The Tower', 'The Star', 'The Moon', 'The Sun', 'Judgement', 'The World'];
 
@@ -49,10 +49,10 @@ function shuffle() {
     card3.querySelector('h4').innerHTML = `${styleTitle(shuffled[2])}`;
 
 
-  // Scroll to the next section (#step4)
+  // Scroll to the Card spread section
   setTimeout(() => {
-    const step4Section = document.querySelector('#step4');
-    step4Section.scrollIntoView({ behavior: 'smooth'});
+    const spreadSection = document.querySelector('#spread');
+    spreadSection.scrollIntoView({ behavior: 'smooth'});
   }, 350);
 
   // Remove existing event listeners
@@ -70,9 +70,9 @@ function shuffle() {
 
 function clearSpread() {
 
-  // Scroll back to Shuffle section (#step3)
+  // Scroll back to Shuffle section
   setTimeout(() => {
-    const shuffleSection = document.querySelector('#step3');
+    const shuffleSection = document.querySelector('#shuffle');
     shuffleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 350);
 
@@ -88,8 +88,8 @@ function clearSpread() {
     const reverseSide = card.querySelector('.card__item-main-rx');
 
     // Remove added classes
-    frontItem.classList.remove('style__cups-bg', 'style__swords-bg', 'style__pentacles-bg', 'style__wands-bg', 'style__major-bg');
-    bottomItem.classList.remove('style__cups-pattern', 'style__swords-pattern', 'style__pentacles-pattern', 'style__wands-pattern', 'style__major-pattern');
+    frontItem.classList.remove('style__cups-bg', 'style__swords-bg', 'style__coins-bg', 'style__wands-bg', 'style__major-bg');
+    bottomItem.classList.remove('style__cups-pattern', 'style__swords-pattern', 'style__coins-pattern', 'style__wands-pattern', 'style__major-pattern');
 
     // Clear content
     titleElement.textContent = '';
@@ -115,8 +115,8 @@ function getCardClass(cardName) {
     return 'cups';
   } else if (cardName.includes('Swords')) {
     return 'swords';
-  } else if (cardName.includes('Pentacles')) {
-    return 'pentacles';
+  } else if (cardName.includes('Coins')) {
+    return 'coins';
   } else if (cardName.includes('Wands')) {
     return 'wands';
   } else {
@@ -141,6 +141,41 @@ function toggleCard() {
 }
 
 
+
+/* ———–––––––––––––
+    Dropdown menu
+  ––––––––––––––––– */
+
+  const menuIcon = document.getElementById("menu-icon");
+  const menuList = document.getElementById("menu-list");
+  const menuLinks = document.querySelectorAll("#menu-list a");
+  
+  function toggleMenu(event) {
+    event.stopPropagation();
+    menuList.classList.toggle('hidden');
+  }
+  
+  function closeMenu() {
+    menuList.classList.add('hidden');
+  }
+  
+  function handleClickOutside(event) {
+    if (!menuList.contains(event.target) && !menuIcon.contains(event.target)) {
+      closeMenu();
+    }
+  }
+  
+  menuIcon.addEventListener("click", toggleMenu);
+  document.addEventListener("click", handleClickOutside);
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.stopPropagation();
+      closeMenu();
+    });
+  });
+
+
+/*
 const footerLinks = document.querySelectorAll('footer a');
 
 footerLinks.forEach(link => {
@@ -149,7 +184,7 @@ footerLinks.forEach(link => {
     window.open(link.href, '_blank');
   });
 });
-
+*/
 
 
 
