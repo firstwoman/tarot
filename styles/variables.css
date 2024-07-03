@@ -2,7 +2,7 @@
   --color-light: #ffffff;
   --color-mid: #EAE5D4;
   --color-mid2: #c5bc8e;
-  --color-dark: #030303;
+  --color-dark: #290010;
   --color-primary: blue;
 
   --color-cups: #FF9770;
@@ -11,8 +11,8 @@
   --color-swords-dk: #D0F500;
   --color-wands: #FF70A6;
   --color-wands-dk: #F5005E;
-  --color-pentacles: #FFD670;
-  --color-pentacles-dk: #F5AF00;
+  --color-coins: #FFD670;
+  --color-coins-dk: #F5AF00;
   --color-major: #EAE5D4;
   --color-major-dk: #C9BB92;
 
@@ -23,9 +23,10 @@
   --h4: clamp(1.25rem, 2.5vw, 1.5rem);
   --h5: clamp(0.875rem, 2vw, 1rem);
   --h6: clamp(0.75rem, 1.5vw, 0.875rem);
-  --p: clamp(0.875rem, 2vw, 1rem);
+  --p: clamp(1rem, 1.5vw, 1.1rem);
 
   --font-h: 'dazzle-unicase', sans-serif;
+  --font-p: 'soleil', sans-serif;
 
 
   --sp_small: 1rem;
